@@ -1,0 +1,1 @@
+docker stop exam-mysql || true && docker start exam-mysql
