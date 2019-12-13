@@ -1,11 +1,9 @@
-using Course.WebApi.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Course.WebApi.Repositories;
-using Course.WebApi.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace Course.WebApi
@@ -21,14 +19,13 @@ namespace Course.WebApi
         {
             services.AddMvc()
                     .AddNewtonsoftJson();
-            // 加入WeatherDbContext
-            services.AddDbContext<WeatherDbContext>(options =>
+            
+            services.AddDbContext<EmployDbContext>(options =>
             {
                 // 透過Configuration.GetConnectionString方法取得連線字串
-                options.UseMySql(Configuration.GetConnectionString("weatherDB"));
+                options.UseMySql(Configuration.GetConnectionString("employ_db"));
             });
 
-            // services.AddScoped<IWeatherForecastRepo, WeatherForecastRepo>();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

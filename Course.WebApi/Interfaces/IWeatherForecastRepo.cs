@@ -5,7 +5,7 @@ namespace Course.WebApi.Interfaces
 {
     public interface IWeatherForecastRepo
     {
-        IEnumerable<WeatherForecast> Read();
-        IEnumerable<WeatherForecast> Update(WeatherForecast weatherForecast, int id);
+        IEnumerable<Employ> Read();
+        IEnumerable<Employ> Update(Employ employ, int id);
     }
 }
