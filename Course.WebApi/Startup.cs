@@ -27,6 +27,12 @@ namespace Course.WebApi
                 // 透過Configuration.GetConnectionString方法取得連線字串
                 options.UseMySql(Configuration.GetConnectionString("weatherDB"));
             });
+            // 加入CompanyDbContext
+            services.AddDbContext<CompanyDbContext>(options =>
+            {
+                // 透過Configuration.GetConnectionString方法取得連線字串
+                options.UseMySql(Configuration.GetConnectionString("companyDb"));
+            });
 
             // services.AddScoped<IWeatherForecastRepo, WeatherForecastRepo>();
         }
