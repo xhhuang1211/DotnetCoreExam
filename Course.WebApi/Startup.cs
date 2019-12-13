@@ -21,14 +21,14 @@ namespace Course.WebApi
         {
             services.AddMvc()
                     .AddNewtonsoftJson();
-            // 加入WeatherDbContext
-            services.AddDbContext<WeatherDbContext>(options =>
+            // 加入 EmployeeDbContext
+            services.AddDbContext<EmployeeDbContext>(options =>
             {
                 // 透過Configuration.GetConnectionString方法取得連線字串
-                options.UseMySql(Configuration.GetConnectionString("weatherDB"));
+                options.UseMySql(Configuration.GetConnectionString("companyDb"));
             });
 
-            // services.AddScoped<IWeatherForecastRepo, WeatherForecastRepo>();
+            services.AddScoped<IEmployeeRepo, EmployeeRepo>();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
