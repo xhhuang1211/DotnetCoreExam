@@ -1,0 +1,16 @@
+﻿
+@model Course.WebApi.Models.Employee
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<form asp-controller="EmployeeView" asp-action="Edit" asp-route-id="@Model.Id"  method="post" class="form-group m-auto w-25">
+
+    <label for="editName">Name:</label>
+    <input asp-for="Name" name="Name" type="text" id="editName" placeholder="name" class="form-control" value="@Model.Name" />
+    <label for="editSalary">Salary:</label>
+    <input asp-for="Salary" name="Salary" type="text" id="editSalary" placeholder="Salary" class="form-control" value="@Model.Salary" />
+
+    <input type="submit" class="btn btn-primary" value="Submit" />
+</form>
