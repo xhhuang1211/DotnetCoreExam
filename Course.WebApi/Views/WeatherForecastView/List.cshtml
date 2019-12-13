@@ -4,47 +4,41 @@
 
 @{
     ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <a href="#" class="btn btn-dark text-light mb-2">Create</a>
 <table class="table">
     <thead>
         <tr>
             <th>
-                date
+                id
             </th>
             <th>
-                temperatureC
+                Name
             </th>
             <th>
-                temperatureF
-            </th>
-            <th>
-                summary
+                Salary
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-
         @foreach (var item in Model)
         {
             <tr>
                 <td>
-                    @item.Date
+                    @item.Id
                 </td>
                 <td>
-                    @item.TemperatureC
+                    @item.Name
                 </td>
                 <td>
-                    @item.TemperatureF
-                </td>
-                <td>
-                    @item.Summary
+                    @item.Salary
                 </td>
                 <td>
                     <a asp-controller="WeatherForecastView" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-controller="WeatherForecastView" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
                 </td>
             </tr>
         }
