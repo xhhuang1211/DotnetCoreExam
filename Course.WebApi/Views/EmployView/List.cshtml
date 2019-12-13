@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Course.WebApi.Models.Employ>
+@{
+    ViewData["Title"] = "List";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Salary</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Salary</td>
+            </tr>           
+        }
+    </tbody>
+</table>

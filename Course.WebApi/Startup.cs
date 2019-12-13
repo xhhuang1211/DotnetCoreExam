@@ -1,3 +1,4 @@
+using Course.WebApi.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +26,9 @@ namespace Course.WebApi
                 // 透過Configuration.GetConnectionString方法取得連線字串
                 options.UseMySql(Configuration.GetConnectionString("employ_db"));
             });
+
+            services.AddScoped<IEmployRepo, EmployRepo>();
+
 
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -19,6 +19,15 @@ namespace Course.WebApi.Repositories
             return _context.Employs.ToArray();
         }
 
+        public void Insert(Employ employ)
+        {
+            if (employ != null)
+            {
+                _context.Employs.Add(employ);
+                _context.SaveChanges();
+            }
+        }
+
         public IEnumerable<Employ> Update(Employ employ, int id)
         {
             throw new System.NotImplementedException();
@@ -33,6 +42,5 @@ namespace Course.WebApi.Repositories
                 _context.SaveChanges();
             }
         }
-
     }
 }
