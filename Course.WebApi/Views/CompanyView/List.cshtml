@@ -1,0 +1,46 @@
+﻿
+
+@model IEnumerable<Course.WebApi.Models.Employee>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<a href="#" class="btn btn-dark text-light mb-2">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                name
+            </th>
+            <th>
+                salary
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Salary
+                </td>
+                <td>
+                    <a asp-controller="CompanyView" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-controller="CompanyView" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
