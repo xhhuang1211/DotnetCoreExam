@@ -28,7 +28,7 @@ namespace Course.WebApi
                 options.UseMySql(Configuration.GetConnectionString("weatherDB"));
             });
 
-            services.AddScoped<IWeatherForecastRepo, WeatherForecastRepo>();
+            // services.AddScoped<IWeatherForecastRepo, WeatherForecastRepo>();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
