@@ -22,10 +22,10 @@ namespace Course.WebApi
             services.AddMvc()
                     .AddNewtonsoftJson();
             // 加入WeatherDbContext
-            services.AddDbContext<WeatherDbContext>(options =>
+            services.AddDbContext<MyCompanyDbContext>(options =>
             {
                 // 透過Configuration.GetConnectionString方法取得連線字串
-                options.UseMySql(Configuration.GetConnectionString("weatherDB"));
+                options.UseMySql(Configuration.GetConnectionString("companyDb"));
             });
 
             // services.AddScoped<IWeatherForecastRepo, WeatherForecastRepo>();
