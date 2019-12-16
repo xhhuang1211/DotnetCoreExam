@@ -1,0 +1,16 @@
+
+@model Course.WebApi.Models.Employee
+@{
+    ViewData["Title"] = "Add an Employee";
+}
+
+
+<form asp-controller="EmployeeView" asp-action="Create" asp-route-id="@Model.Id"  method="post" class="form-group m-auto w-25">
+
+    <label for="createName">Name:</label>
+    <input asp-for="Name" name="Name" type="text" id="createName" placeholder="name" class="form-control" value="@Model.Name" />
+    <label for="createSalary">Salary:</label>
+    <input asp-for="Salary" name="Salary" type="int" id="createSalary" placeholder="100" class="form-control" value="@Model.Salary" />
+
+    <input type="submit" class="btn btn-primary" value="Submit" />
+</form>
